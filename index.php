@@ -37,7 +37,7 @@
 		<div class="form-header">
 		<h3 class="form-title">
 		<span class="glyphicon glyphicon-plane"></span>
-		<b>COMITÉ DE ÉTICAS </b> 
+		<b>COMITÉ DE ÉTICA </b> 
 		</h3>
 		</div>
 			<div class="rowadmin">                  
