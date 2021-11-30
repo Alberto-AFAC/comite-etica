@@ -9,9 +9,9 @@
         //     //si no exixte quiere decir que nadie se ha logeado y lo regsara al inicio (login)
         //     header('Location: ../');
         // }
-       // echo $_SESSION['usuario']['privilegios'];
+        echo $_SESSION['usuario']['privilegios'];
 
 }
-      echo $id = $_SESSION['usuario']['id_usu'];
+      $id = $_SESSION['usuario']['id_usu'];
       $usu = $_SESSION['usuario']['usuario'];
       $pass = $_SESSION['usuario']['password'];
