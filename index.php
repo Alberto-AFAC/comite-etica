@@ -43,7 +43,7 @@
 			<div class="rowadmin">                  
 				<div class="form-body">
 					<div class="form-group">
-					<label>Usuario</label>
+					<label>Nombre (Si cuenta con dos nombres, agregar)</label>
 						<div class="input-group col-md-12">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
 						<input type="text" class="form-control" onkeyup="mayus(this);" name="tecn" pattern="[A-Z,a-z,0-9,_-,ñ,Ñ]{1,15}" required/>
