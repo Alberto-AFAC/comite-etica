@@ -1,0 +1,134 @@
+/* ----- ----- ----- ----- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; }
+  
+  body {
+    font-size: 14px;
+    background: #fff;
+    }
+  
+  a {
+    color: #0609b3; }
+  
+  .wrap {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto; }
+  
+  .info {
+    text-align: center;
+    padding: 20px;
+    color: #001F3F;
+    border-bottom: 1px solid #ccc; }
+    .info p {
+      margin-top: 20px; }
+  
+  .formulario1 {
+    /* --------------------------------------- */
+    /* ----- Radio Button */
+    /* --------------------------------------- */
+    /* --------------------------------------- */
+    /* ----- Checkbox */
+    /* --------------------------------------- */ }
+    .formulario1 h2 {
+      font-size: 16px;
+      color: #001F3F;
+      margin-bottom: 20px;
+      margin-left: 20px; }
+    .formulario1 > div {
+      padding: 10px 0;
+      border-bottom: 1px transparent; }
+    .formulario1 .radio label,
+    .formulario1 .checkbox label {
+      display: inline-block;
+      cursor: pointer;
+      color: #0f0281;
+      position: relative;
+      padding: 5px 15px 5px 51px;
+      font-size: 1em;
+      border-radius: 5px;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .formulario1 .radio label:hover,
+      .formulario1 .checkbox label:hover {
+        background: rgba(54, 91, 255, 0.1); }
+      .formulario1 .radio label:before,
+      .formulario1 .checkbox label:before {
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        left: 15px;
+        border-radius: 50%;
+        background: none;
+        border: 3px solid #1505a3; }
+    .formulario1 input[type="radio"] {
+      display: none; }
+      .formulario1 input[type="radio"]:checked + label:before {
+        display: none; }
+      .formulario1 input[type="radio"]:checked + label {
+        padding: 5px 15px;
+        background: #051883;
+        border-radius: 2px;
+        color: #fff; }
+    .formulario1 .checkbox label:before {
+      border-radius: 3px; }
+    .formulario1 .checkbox input[type="checkbox"] {
+      display: none; }
+      .formulario1 .checkbox input[type="checkbox"]:checked + label:before {
+        display: none; }
+      .formulario1 .checkbox input[type="checkbox"]:checked + label {
+        background: #0b037e;
+        color: #fff;
+        padding: 5px 15px; }
+  
+  /*# sourceMappingURL=estilos.css.map */
+ 
+  
+  .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+   /* margin-left: auto;
+    margin-right: auto; */
+    
+    min-width: 450px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+  }
+  
+  .content-table thead tr {
+    background-color: #ffffff;
+    color: #747474;
+    text-align: center;
+    /* font-weight: bold;*/
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 10px 17px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #3c8dbc;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #3c8dbc;
+  }
+  

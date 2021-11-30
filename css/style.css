@@ -1,0 +1,165 @@
+.logo-lg {
+    font-size: 15px;
+}
+
+
+/*Ocultar contenedores area*/
+
+#Fregist {
+    display: none;
+}
+
+#det1 {
+    display: none;
+}
+
+#det2 {
+    display: none;
+}
+
+#edt1 {
+    display: none;
+}
+
+.row>.col-lg-12>img {
+    float: right;
+    width: 90px;
+    margin-top: 0.8em
+}
+
+.padding {
+    padding: 0;
+}
+
+.error,
+.exito,
+.aviso {
+    margin: 0;
+    color: black;
+    width: 40%;
+    float: right;
+    padding: 0.4em 0;
+    display: none;
+}
+
+.adjuto {
+    margin: 0;
+    width: 40%;
+    float: right;
+    padding: 0.4em 0;
+    display: none;
+}
+
+#echo,
+#invalida,
+#falso,
+#vacios,
+#error
+{
+    padding: 0.5em;
+    margin: 0;
+    width: 250px;
+    float: right;
+    display: none;
+}
+
+/*Apartado de reportes*/
+
+#div1>input,
+#div2>input {
+    cursor: pointer;
+}
+
+.reporte {
+    background: white;
+    color: black;
+    width: 100%;
+    float: right;
+    border: 2px solid green;
+    padding: 1em 0em;
+    text-align: center;
+    display: none;
+}
+
+
+/*estilos imagen*/
+
+.imgafac {
+    float: right;
+    width: 90px;
+    margin-top: 0.8em
+}
+
+
+/*tmaño dé panel*/
+
+.width {
+    width: 900px;
+    margin-top: 4em;
+}
+
+
+/*ocultar borde de input*/
+
+.transparent {
+    border: 1px solid white;
+    background: white;
+}
+
+.disabled {
+    background: white;
+}
+
+.datas {
+    font-size: 12px;
+    text-align: center;
+    border: transparent;
+    width: 100%;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+    list-style: none;
+    color: #000;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(194, 194, 194, 0.6);
+}
+
+.cv-spinner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #ddd solid;
+    border-top: 4px #00569c solid;
+    border-radius: 50%;
+    animation: sp-anime 0.9s infinite linear;
+}
+
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.is-hide {
+    display: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: none;
+    border: none;
+    /*change the hover text color*/
+}

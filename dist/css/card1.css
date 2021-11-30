@@ -1,0 +1,126 @@
+.card-container{
+    display: flex;
+    width: 600px, 300px;
+    height: auto;
+    background: #fff;
+    border-radius: 1px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+}
+
+.header1{
+
+    border-right: 1px solid #ddd;
+
+}
+
+.descripcion{
+
+    background: #fbfbfb;
+
+}
+
+.header1, .descripcion {
+    padding: 5px;
+    text-align: center;
+}
+
+.header1 a {
+ position: relative;
+ display: block;
+}
+
+.header1 img{
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, .06);
+    margin: 20px 30px;
+    transition: .2s
+}
+.header1 a:hover img{
+box-shadow: 0 0 0 12px rgba(0, 0, 0, .05);
+}
+
+.header1 h3{
+    color:royalblue
+}
+
+.header1 h5{
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    position: relative;
+}
+
+.descripcion p {
+    margin: 20px 30px;
+}
+
+.descripcion .informacion {
+    margin-top: 25px;
+}
+
+.descripcion .informacion a{
+    display: inline-block;
+    padding: 0 15px;
+    color:royalblue;
+}
+
+@MEDIA (max-width:640px){
+    .card-container{
+         display: block;
+         border: 450px;
+    }
+    .header1{
+         padding: 20px 20px 5px 20px;
+         border: none;
+    }
+    .descripcion{
+         padding: 5px 20px 20px 20px;
+         background:transparent ;
+    }
+
+    .hader h4{
+        margin:0;
+    }
+}
+
+/* estilo de radio button */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    background: #fff;
+    font-family: "Roboto";
+}
+
+.wrap {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 20px;
+    /*margin: auto;*/
+}
+
+.formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.formulario input [type="radio"]{
+    display: none;
+
+
+}
+

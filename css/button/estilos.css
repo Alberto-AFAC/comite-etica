@@ -1,0 +1,55 @@
+
+#div1 > .radio label,
+#div2 .radio label {
+display: inline-block;
+cursor: pointer;
+color: #0074D9;
+position: relative;
+padding: 5px 15px 5px 51px;
+font-size: 1em;
+border-radius: 5px;
+-webkit-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease; }
+#div1 > .radio label:hover,
+#div2 .radio label:hover {
+background: rgba(0, 116, 217, 0.1); }
+#div1 > .radio label:before,
+#div2 .radio label:before {
+content: "";
+display: inline-block;
+width: 17px;
+height: 17px;
+position: absolute;
+left: 15px;
+border-radius: 50%;
+background: none;
+border: 3px solid #0074D9; }
+#div1 .radio input[type="radio"],
+#div2 input[type="radio"] {
+display: none; }
+#div1 input[type="radio"]:checked + label:before,
+#div2 input[type="radio"]:checked + label:before {
+display: none; }
+#div1 input[type="radio"]:checked + label,
+#div2 input[type="radio"]:checked + label {
+padding: 5px 15px;
+background: #0074D9;
+border-radius: 2px;
+color: #fff; }
+#div1 .checkbox label:before,
+#div2 .checkbox label:before {
+border-radius: 3px; }
+#div1 .checkbox input[type="checkbox"],
+#div2 .checkbox input[type="checkbox"] {
+display: none; }
+#div1 .checkbox input[type="checkbox"]:checked + label:before,
+#div2 .checkbox input[type="checkbox"]:checked + label:before {
+display: none; }
+#div1 .checkbox input[type="checkbox"]:checked + label,
+#div2 .checkbox input[type="checkbox"]:checked + label {
+background: #0074D9;
+color: #fff;
+padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	
+	background-color:#f9f9f9;	
+	margin: 0 auto;
+}
+.container{
+
+}
+.signup-form-container {
+	
+	border-radius:3px;
+	background:#ffffff;
+	border-top:3px solid #d2d6de;
+	margin:9% auto;
+	max-width:600px;
+	border-top-color:#a12243;
+	box-shadow:0 1px 5px rgba(0, 0, 0, 0.1)
+}
+
+.form-header{	
+	color:#444;
+	display:block;
+	/*padding:20px;*/
+	position:relative;
+	border-bottom:1px solid #f4f4f4;
+		border-bottom: 3px solid #bc955a;
+
+}
+
+.form-header .form-title {
+	display:inline-block;
+	font-size:18px;
+	margin:0;
+	line-height:1;
+	padding: 10px 10px;
+}
+.rowadmin #form .form-header{
+	margin-top: 3em;
+}
+
+.form-body {
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+	border-bottom-right-radius:3px;
+	border-bottom-left-radius:3px;
+	padding-top:20px;
+}
+
+.form-footer {
+text-align: center;
+/*	width: 75%;*/
+}
+
+.form-control{
+	
+	font-size: 16px;
+    height: auto;
+    padding: 7px 9px;
+}
+.row{
+	/*width: 450px;*/
+	margin: 0 auto;
+}
+.rowadmin{
+
+}
+.row label{
+	padding: 1em 0;
+}
+	input[type="submit"], input[type="button"], input[type="reset"] {
+	display: inline-block;
+	background: #0e3a5d;
+	padding: 7px 55px;
+	color: white;
+	border: 0 none;
+	font-size: 18px;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-radius: 1em;
+/*	margin-left: 3em;
+	/*margin-left: 0.7em;*/
+	}
+	input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+	opacity: .9;
+	}
+	#usuario img{
+	width: 250px;
+	margin-left: -14em;
+	position: absolute;
+	}
+	.error{
+	display: none;
+	 color: #a94442;
+
+	}
+	.errortec{
+	display: none; 
+	color: #a94442;		
+	}
+	.glyphicon-plane{
+	color: #033568;
+	font-size: 20px;
+	transform: rotate(50deg);
+	}
+	#admin img{
+	width: 250px;
+	margin-left: -13.8em;
+	margin-top: 1.7em;
+	position: absolute;
+	}
+	.rowadmin .help-block{
+	height: 8px;
+	}
+	.row .help-block{
+	height: 20px;
+	}
+	.rowadmin p{
+	margin: -1em 0; 
+	height: 20px;
+	}
+	.row p{
+	margin-top: -1.5em;
+	height: 20px;
+	display: block;
+	}
