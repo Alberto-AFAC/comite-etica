@@ -9,7 +9,10 @@ require_once "../../conexion/conexion.php";
 
         if($_SESSION['consulta'] > 0){
           $Idpst=$_SESSION['consulta'];
-          $query = "SELECT * FROM personal WHERE `gstIDSub` = $Idpst AND estado = 0";
+     //     $query = "SELECT * FROM personal WHERE `gstIDSub` = $Idpst AND estado = 0";
+            $query = "SELECT * FROM personal 
+                      INNER JOIN  votacioncargo ON `n_empleado` = `gstNmpld`
+                      WHERE `gstIDSub` = $Idpst AND votacioncargo.estado = 0"       
         }
 
 
