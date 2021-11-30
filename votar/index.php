@@ -5,7 +5,12 @@
         if($_SESSION['usuario']['privilegios'] == "SUPER_ADMIN" || 
           $_SESSION['usuario']['privilegios'] == "ADMINISTRADOR" || 
           $_SESSION['usuario']['privilegios'] == "ADMINISTRATIVO" || 
-          $_SESSION['usuario']['privilegios'] == "DIRECTOR"){
+          $_SESSION['usuario']['privilegios'] == "DIRECTOR" ||
+          $_SESSION['usuario']['privilegios'] == "INSPECTOR" ||
+          $_SESSION['usuario']['privilegios'] == "HUMANOS" ||
+          $_SESSION['usuario']['privilegios'] == "COORDINADOR" ||
+          $_SESSION['usuario']['privilegios'] == "INSTRUCTOR"
+        ){
          //   y se redirecciona al directorio que le corresponde
            header("Location: voto.php");
            }        }else{
