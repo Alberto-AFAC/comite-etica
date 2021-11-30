@@ -12,7 +12,7 @@ require_once "../../conexion/conexion.php";
      //     $query = "SELECT * FROM personal WHERE `gstIDSub` = $Idpst AND estado = 0";
             $query = "SELECT * FROM personal 
                       INNER JOIN  votacioncargo ON `n_empleado` = `gstNmpld`
-                      WHERE `gstIDSub` = $Idpst AND votacioncargo.estado = 0"       
+                      WHERE `id_cargo` = $Idpst AND votacioncargo.estado = 0"       
         }
 
 
