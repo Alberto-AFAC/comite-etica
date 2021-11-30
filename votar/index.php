@@ -2,7 +2,7 @@
 //si la variable ssesion existe realizara las siguiente evaluacion 
     if (isset($_SESSION['usuario'])) {
         //si se ha logeado evaluamos si el usuario que aya ingresado intenta acceder a este directorio no es de tipo administrador, no le es permitido el acceso .. si tipo usuario es distinto de admin , entonces no tiene nada que hacer en este directorio 
-        if($_SESSION['usuario']['privilegios'] == "SUPER_ADMIN" || $_SESSION['usuario']['privilegios'] || "ADMINISTRADOR"){
+        if($_SESSION['usuario']['privilegios'] == "SUPER_ADMIN" || $_SESSION['usuario']['privilegios'] || "ADMINISTRADOR" || $_SESSION['usuario']['privilegios'] || "ADMINISTRADOR" == 'ADMINISTRATIVO'){
          //   y se redirecciona al directorio que le corresponde
            header("Location: voto.php");
            }        }else{
@@ -16,4 +16,4 @@
       $usu = $_SESSION['usuario']['usuario'];
       $pass = $_SESSION['usuario']['password'];
 
-      
+
