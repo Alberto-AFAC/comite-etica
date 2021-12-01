@@ -5,7 +5,7 @@ require_once "../../conexion/conexion.php";
 
       if(isset($_SESSION['consulta']) && !empty($_SESSION['consulta'])){
 
-      	echo $_SESSION['consulta'];
+      	$_SESSION['consulta'];
 
         if($_SESSION['consulta'] > 0){
           $Idpst=$_SESSION['consulta'];
