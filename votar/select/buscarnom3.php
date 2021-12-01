@@ -13,7 +13,7 @@
 			</select> -->
 <!-- 			<label>SELECCIONE CARGO</label> 
  -->			<select id="idarper" class="form-control" name="idarper" type="text" data-live-search="true" style="width: 100%">
-			<option value="0">SELECCIONE</option>
+			<option value="0">SELECCIONE SUBDIRECCIÓNES DE ÁREA</option>
 			<option value="3">SUBDIRECCIÓNES DE ÁREA</option>
 			</select>
 
