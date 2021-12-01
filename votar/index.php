@@ -10,7 +10,8 @@
           $_SESSION['usuario']['privilegios'] == "HUMANOS" ||
           $_SESSION['usuario']['privilegios'] == "COORDINADOR" ||
           $_SESSION['usuario']['privilegios'] == "INSTRUCTOR" ||
-          $_SESSION['usuario']['privilegios'] == "NUEVO INGRESO"){
+          $_SESSION['usuario']['privilegios'] == "NUEVO INGRESO" || 
+          $_SESSION['usuario']['privilegios'] == "EJECUTIVO"){
          //   y se redirecciona al directorio que le corresponde
            header("Location: voto.php");
            }        }else{
