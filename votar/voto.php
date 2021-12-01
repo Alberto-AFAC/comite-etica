@@ -57,6 +57,9 @@ unset($_SESSION['consul']);
     padding: 0.4em 0;
     background: white;
 }
+#butsel{
+  padding: 0.5em 1em 0.5em 1em;
+}
 </style>
 <!-- ADD THE CLASS sidebar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
