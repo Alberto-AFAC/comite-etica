@@ -77,10 +77,28 @@ unset($_SESSION['consul']);
 
          <li class="dropdown user user-menu">
                    
+<?php 
+
+$queri = "SELECT count(*) AS ttl FROM votacion  
+          INNER JOIN personal ON gstIdper = idevl
+          WHERE perid = $id
+          " ;
+$result = mysqli_query($conexion, $queri);
+$resut = mysqli_fetch_array($result);
+
+
+$res = 7-$resut['ttl'];
+if($resut['ttl']==7){
+
+?>
                 <div class="pull-right" style="margin-top:1em ">
-                  <a href="../conexion/cerrar_session.php" class="btn btn-primary btn-flat">Cerrar sesión</a>
-                </div>
-           
+                  <a href="../conexion/cerrar_session.php" class="btn btn-primary btn-flat">CERRAR SESIÓN </a>
+               </div>
+<?php }else{ ?> 
+                <div class="pull-right" style="margin-top:1em ">
+                  <a href="#" type="button" data-toggle="modal" data-target="#modal-default" onclick="valor(<?php echo $res?>);" class="btn btn-primary btn-flat">CERRAR SESIÓN </a>
+               </div>
+<?php } ?>           
           </li>
 
           <li class="dropdown user user-menu">
@@ -91,6 +109,8 @@ unset($_SESSION['consul']);
     </nav>
   </header>
 
+
+</script>
   <div class="content-wrapper">
 
 
@@ -635,6 +655,29 @@ if($n==1){
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
+
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">AVISO </h4>
+              </div>
+              <div class="modal-body">
+                <p><div id="nominar"></div></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">CONTINUAR NOMINANDO </button>
+                <a href="../conexion/cerrar_session.php"><button type="button" class="btn btn-primary">
+                  CERRAR SESIÓN </button></a>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
@@ -714,6 +757,11 @@ dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votar';
 
 } 
 
+   
+   function valor(v){
+
+    $("#nominar").html('LE HACE FALTA NOMINAR A <b>'+' '+v+' '+'</b> CANDIDATOS');
+   }
 
 
 </script>
