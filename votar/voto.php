@@ -140,7 +140,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==1){
 ?>
@@ -212,7 +212,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==2){
 ?>
@@ -283,7 +283,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==3){
 ?>
@@ -355,7 +355,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==4){
 ?>
@@ -427,7 +427,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==5){
 ?>
@@ -502,7 +502,7 @@ $resul = mysqli_query($conexion, $queri);
 $n=0;
 while($resu = mysqli_fetch_array($resul)){
 $n++;
-$exito = 'VOTASTE POR'.' '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==6){
 
