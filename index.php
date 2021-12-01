@@ -51,7 +51,7 @@
 					<span class="help-block" id="error"></span>
 					</div>
 						<div class="form-group">
-							<label>Contraseña</label> 
+							<label>Número de empleado </label> 
 							<div class="input-group col-md-12">                       
 								<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
 								<input type="password" name="pass" class="form-control" pattern="[A-Z,a-z,0-9,_-ñÑ]{1,15}" required />
