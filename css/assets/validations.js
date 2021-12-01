@@ -22,7 +22,7 @@ $('document').ready(function()
 				tecn: {
 				required: true,
 				validname: false,
-				minlength: 5
+				minlength: 3
 				},
 				pass: {
 					required: true,
