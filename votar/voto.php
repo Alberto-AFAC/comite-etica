@@ -182,7 +182,7 @@ if($resu['idareas']==1){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -254,7 +254,7 @@ if($resu['idareas']==2){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -325,7 +325,7 @@ if($resu['idareas']==3){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -397,7 +397,7 @@ if($resu['idareas']==4){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -469,7 +469,7 @@ if($resu['idareas']==5){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -551,7 +551,7 @@ if($n==1){
 <div class="modal-header padding">
 <b><p class="text-center padding" id="errores">EL NOMINADO YA FUE SELECCIONADO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -592,7 +592,7 @@ if($n==1){
 
 <b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
-<b><p class="text-center padding" id="vacio">ELIJA POR QUIEN DESEA VOTAR </p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
@@ -723,7 +723,7 @@ var idevl = document.getElementById('idevl').value;
 var idarper = document.getElementById('idarper').value;
 
 dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votar';
-  
+// alert(dato); 
  if (perid == '' || idevl == '0' || idarper == '0') {
 
 
