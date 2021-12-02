@@ -14,7 +14,7 @@
 <!-- 			<label>SELECCIONE CARGO</label> 
  -->			<select id="idarper" class="form-control" name="idarper" type="text" data-live-search="true" style="width: 100%">
 			<option value="0">SELECCIONE DIRECCIONES DE ÁREA</option>
-			<option value="2">DIRECCIÓNES DE ÁREA</option>
+			<option value="2">DIRECCIONES DE ÁREA</option>
 			</select>
 
 	<script type="text/javascript">
