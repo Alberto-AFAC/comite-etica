@@ -16,7 +16,7 @@
 			<option value="0">SELECCIONE CARGO</option>
 			<option value="1">DIRECCIÓN EJECUTIVA</option> 
 			<option value="2">DIRECCIÓNES DE ÁREA</option>
-			<option value="3">SUBDIRECCIÓNES DE ÁREA</option>
+			<option value="3">SUBDIRECCIONES DE ÁREA</option>
 			<option value="4">JEFATURAS DE DEPARTAMENTO</option>
 			<option value="5">ENLACES</option> 
 			<option value="6">OPERATIVO</option>

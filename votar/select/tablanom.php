@@ -32,7 +32,7 @@ background: white;
                   <label>NOMINADOS</label>
 
 	<select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
-              <option value="0">¿A QUIEN VA SELECCIONAR?</option>
+              <option value="0">¿A QUIÉN VA SELECCIONAR?</option>
 <?php while($data = mysqli_fetch_assoc($resultado)){  ?>
 
               <option value="<?php echo $data['gstIdper']?>"><?php echo $data['gstNombr'].' '.$data['gstApell']?></option>
