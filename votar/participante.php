@@ -247,8 +247,24 @@ $resultado = mysqli_query($conexion, $query);
   $n = 0;
       while($data = mysqli_fetch_array($resultado)){ 
 $n++;
+
+if($data['idareas']==1){
+  $cargo = 'DIRECCIÓN EJECUTIVA';
+}else if($data['idareas']==2){
+  $cargo = 'DIRECCIONES DE ÁREA';  
+}else if($data['idareas']==3){
+  $cargo = 'SUBDIRECCIONES DE ÁREA';  
+}else if($data['idareas']==4){
+  $cargo = 'JEFATURAS DE DEPARTAMENTO';  
+}else if($data['idareas']==5){
+  $cargo = 'ENLACES';  
+}else if($data['idareas']==6){
+  $cargo = 'OPERATIVO';  
+}
+
+
 ?>
-["<?php echo  $n?>","<?php echo  $data['gstNombr']?>","<?php echo $data['gstApell']?>","<?php echo  $data['votos']?>"],
+["<?php echo  $n?>","<?php echo $cargo?>","<?php echo  $data['gstNombr']?>","<?php echo $data['gstApell']?>","<?php echo  $data['votos']?>"],
 
 <?php } ?>
 ];
@@ -266,13 +282,16 @@ var tableGenerarReporte = $('#data-table-votacion').DataTable({
             title: "#"
         },
         {
+            title: "CARGO"
+        },
+        {
             title: "NOMBRE"
         },
         {
             title: "APELLIDOS"
         },
         {
-            title: "NOMINACIONES"
+            title: "|| NOMINACIONES"
         }    
       ],
     });
