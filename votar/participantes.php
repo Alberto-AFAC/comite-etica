@@ -92,15 +92,15 @@ unset($_SESSION['consul']);
 
 
     <section class="content-header">
-      <h1>NOMINACIÓN COMITÉ DE ÉTICA <br>
+      <h1>VOTACIÓN COMITÉ DE ÉTICA <br>
       </h1>
 
 
 <?php if($_SESSION['usuario']['privilegios']=='ADMINISTRADOR' || $_SESSION['usuario']['privilegios']=='SUPER_ADMIN' || $pass == '7141408'){ ?>
 <ol class="breadcrumb">
-        <li><a style="font-size: 14px" href="voto.php"><i class="fa fa-home"></i> INICIO</a>
+        <li><a style="font-size: 14px" href="votar.php"><i class="fa fa-home"></i> INICIO</a>
         </li>
-        <li><a style="font-size: 14px" href="participante.php"><i class="active" class="fa fa-user"></i> NOMINADOS</a>
+        <li><a style="font-size: 14px" href="participantes.php"><i class="active" class="fa fa-user"></i> PARTICIPANTES</a>
         </li>
 <!--         <li></li> -->
       </ol>
@@ -242,7 +242,7 @@ dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votar';
 var dataSet = [
 <?php 
 $query = "SELECT *,COUNT(idevl) AS votos FROM votacion
-INNER JOIN personal ON idevl = gstIdper AND idasnt = 1 GROUP BY idevl";
+INNER JOIN personal ON idevl = gstIdper AND idasnt = 2 GROUP BY idevl";
 $resultado = mysqli_query($conexion, $query);
   $n = 0;
       while($data = mysqli_fetch_array($resultado)){ 
@@ -291,7 +291,7 @@ var tableGenerarReporte = $('#data-table-votacion').DataTable({
             title: "APELLIDOS"
         },
         {
-            title: "|| NOMINACIONES"
+            title: "|| VOTOS"
         }    
       ],
     });
