@@ -81,7 +81,7 @@ unset($_SESSION['consul']);
 
 $queri = "SELECT count(*) AS ttl FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id AND idasnt = 2
+          WHERE perid = $id
           " ;
 $result = mysqli_query($conexion, $queri);
 $resut = mysqli_fetch_array($result);
@@ -115,7 +115,7 @@ if($resut['ttl']==7){
 
 
     <section class="content-header">
-      <h1>CANDIDATOS COMITÉ DE ÉTICA <br>
+      <h1>NOMINACIÓN COMITÉ DE ÉTICA <br>
       </h1>
 
 
@@ -123,7 +123,7 @@ if($resut['ttl']==7){
 <ol class="breadcrumb">
      <li><a style="font-size: 14px" href="voto.php"><i class="active" class="fa fa-home"></i> INICIO</a>
         </li>
-        <li><a style="font-size: 14px" href="participantes.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
+        <li><a style="font-size: 14px" href="participante.php"><i class="fa fa-user"></i> NOMINADOS</a></li>
 <!--         <li></li> -->
       </ol>
 
@@ -150,7 +150,6 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
           AND idareas = 1
-          AND idasnt = 2
   " ;
 $resultado = mysqli_query($conexion, $queri);
 
@@ -160,13 +159,11 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
           AND idareas = 1 
-          AND idasnt = 2
-
           " ;
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==1){
 ?>
@@ -179,7 +176,7 @@ if($resu['idareas']==1){
 }
  }else{ ?>
 
-<form id="formulario1" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
 
@@ -190,41 +187,29 @@ if($resu['idareas']==1){
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="1">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
+
 <div class="form-group">
 <div class="col-sm-12">    
-<div class="form-group">
-
 <label>DIRECCIÓN EJECUTIVA</label>
+<div id="buscador1"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '3100248' || gstNmpld = '7141668' || gstNmpld = '3100116' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){  ?>
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
 
-
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
-</div>
-
-</div>
-
-
-
-<?php } ?>
-
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
 </div>
-
-
 </form>
      
 <?php } ?>
@@ -237,7 +222,6 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
           AND idareas = 2
-          AND idasnt = 2
   " ;
 $resultado = mysqli_query($conexion, $queri);
 
@@ -246,13 +230,12 @@ if($res = mysqli_fetch_array($resultado)){
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
-          AND idareas = 2
-          AND idasnt = 2 
+          AND idareas = 2 
           " ;
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==2){
 ?>
@@ -265,7 +248,7 @@ if($resu['idareas']==2){
 }
  }else{ ?>
 
-<form id="formulario2" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
 
@@ -276,44 +259,29 @@ if($resu['idareas']==2){
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="2">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
 
 <div class="form-group">
 <div class="col-sm-12">    
-  <div class="form-group">
 <label>DIRECCIÓN DE ÁREA</label>
+<div id="buscador2"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '3100847' || gstNmpld = '7141384' || gstNmpld = '7141380' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
 
-
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
-</div>
-
-</div>
-
-<?php } ?>
-
-
-
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
-
-
 </div>
-
-
 </form>
 <?php } ?>
 </div>
@@ -325,7 +293,7 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
           AND idareas = 3
-          AND idasnt = 2 " ;
+  " ;
 $resultado = mysqli_query($conexion, $queri);
 
 if($res = mysqli_fetch_array($resultado)){ 
@@ -333,12 +301,12 @@ if($res = mysqli_fetch_array($resultado)){
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
-          AND idareas = 3
-          AND idasnt = 2" ;
+          AND idareas = 3 
+          " ;
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
+$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
 
 if($resu['idareas']==3){
 ?>
@@ -351,7 +319,7 @@ if($resu['idareas']==3){
 }
  }else{ ?>
 
-<form id="formulario3" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
 
@@ -362,43 +330,29 @@ if($resu['idareas']==3){
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="3">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
 
 <div class="form-group">
-<div class="col-sm-12">  
-<div class="form-group">
-
+<div class="col-sm-12">    
 <label>SUBDIRECCIÓN DE ÁREA</label>
+<div id="buscador3"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '7138952' || gstNmpld = '7135156' || gstNmpld = '7131264' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
 
-
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
-</div>
-
-</div>
-
-<?php } ?>
-</select>
-
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
-
 </div>
-
-
 </form>
 <?php } ?>
 </div>
@@ -411,7 +365,6 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
           AND idareas = 4
-          AND idasnt = 2
   " ;
 $resultado = mysqli_query($conexion, $queri);
 
@@ -420,8 +373,7 @@ if($res = mysqli_fetch_array($resultado)){
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
-          AND idareas = 4
-          AND idasnt = 2 
+          AND idareas = 4 
           " ;
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
@@ -439,7 +391,7 @@ if($resu['idareas']==4){
 }
  }else{ ?>
 
-<form id="formulario4" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
 
@@ -450,41 +402,29 @@ if($resu['idareas']==4){
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="4">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
 
 <div class="form-group">
-<div class="col-sm-12">  
-<div class="form-group">  
+<div class="col-sm-12">    
 <label>JEFATURA DE DEPARTAMENTO</label>
+<div id="buscador4"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '7138977' || gstNmpld = '3100121' || gstNmpld = '7131311' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
 
-
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
-</div>
-
-</div>
-<?php } ?>
-</select>
-
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
-
 </div>
-
-
 </form>
 <?php } ?>
 </div>            <!-- /.box-header -->
@@ -497,7 +437,6 @@ $queri = "SELECT * FROM votacion
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
           AND idareas = 5
-          AND idasnt = 2
   " ;
 $resultado = mysqli_query($conexion, $queri);
 
@@ -506,8 +445,7 @@ if($res = mysqli_fetch_array($resultado)){
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
-          AND idareas = 5
-          AND idasnt = 2 
+          AND idareas = 5 
           " ;
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
@@ -525,7 +463,7 @@ if($resu['idareas']==5){
 }
  }else{ ?>
 
-<form id="formulario5" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
 
@@ -536,41 +474,29 @@ if($resu['idareas']==5){
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="5">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
 
 <div class="form-group">
 <div class="col-sm-12">    
-<div class="form-group">
 <label>ENLACE</label>
+<div id="buscador5"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '7133757' || gstNmpld = '3100199' || gstNmpld = '7141056' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
 
-
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
-</div>
-
-</div>
-<?php } ?>
-</select>
-
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
-
 </div>
-
-
 </form>
 <?php } ?>
 </div>            
@@ -583,8 +509,7 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '7133757' || gstNmpld = '3100
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id 
-          AND idareas = 6
-          AND idasnt = 2";
+          AND idareas = 6" ;
 $resultado = mysqli_query($conexion, $queri);
 
 
@@ -595,8 +520,7 @@ if($res = mysqli_fetch_array($resultado)){
 $queri = "SELECT * FROM votacion  
           INNER JOIN personal ON gstIdper = idevl
           WHERE perid = $id
-          AND idareas = 6
-          AND idasnt = 2";
+          AND idareas = 6" ;
 $resul = mysqli_query($conexion, $queri);
 $n=0;
 while($resu = mysqli_fetch_array($resul)){
@@ -622,58 +546,83 @@ if($n==1){
 ?>
 
 
-
-
-<?php 
-  }
-}else{ ?>
-<form id="formulario6" action="" method="POST" onsubmit="return votarpor(this)">
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
 <br>
 <div class="modal-header padding">
-<b><p class="text-center padding" id="errores">YA VOTO POR EL NOMINADO</p></b>
+<b><p class="text-center padding" id="errores">EL NOMINADO YA FUE SELECCIONADO</p></b>
 <b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
 <b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
 
 </div>
 
 <div class="modal-body" id="body">
-<input type="hidden" name="idarper" id="idarper" value="6">
 <input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
 
 <div class="form-group">
 <div class="col-sm-12">    
-<div class="form-group">
 <label>OPERATIVO</label>
+<u style="margin-left: 0.5em;color: blue;">¡NOMINE EL SIGUIENTE OPERATIVO!</u> 
+<div id="buscador6"></div>
 </div>
-<?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449' || gstNmpld = '2110367' || gstNmpld = '3100910' || gstNmpld = '3100129' || gstNmpld = '3100953' || gstNmpld = '3100454' || gstNmpld = '7141443' ORDER BY gstNombr ASC ";
-      $result3 = mysqli_query($conexion,$query3);
-?>
-
-<?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
+</div>
 
 <div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
+
+<div class="form-group" style="margin-top:1em ">
 <div class="col-sm-4">
-<label class="label2">NOMBRE(S)</label>
-<input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
 </div>
 </div>
-
-
-
-
-<?php } ?>
-</select>
-
 </div>
-</div>
-
-</div>
-
-
 </form>
 
+<?php 
+  }
+}else{ ?>
+
+<form id="formulario" action="" method="POST" onsubmit="return votar(this)">
+<br>
+<div class="modal-header padding">
+
+<b><p class="text-center padding" id="errores">ERROR AL REALIZAR SU VOTO</p></b>
+<b><p class="text-center padding" id="exito">¡SU VOTO SE REALIZÓ CON ÉXITO !</p></b>
+<b><p class="text-center padding" id="vacio">SELECCIONE OPCIÓN  </p></b>
+
+</div>
+
+<div class="modal-body" id="body">
+<input  type="hidden" name="perid" id="perid" value="<?php echo $id?>">
+
+<div class="form-group">
+<div class="col-sm-12">    
+<label>OPERATIVO</label>
+<u style="margin-left: 0.5em;color: blue;">¡PUEDES NOMINAR 2 OPERATIVOS!</u>  
+
+<div id="buscador6"></div>
+</div>
+</div>
+
+<div class="form-group">
+<div class="col-sm-12">
+<div id="seleccionar"></div> 
+</div>
+</div>
+</div>
+
+<div class="form-group" style="margin-top:1em ">
+<div class="col-sm-4">
+<div class="box-footer">
+<button type="button" id="butsel" class="btn btn-info btn-lg" onclick="votar();">SELECCIONE  </button>
+</div>
+</div>
+</div>
+</form>
 <?php } ?>
 </div>            <!-- /.box-header -->
 <!-- /.box-header -->
@@ -754,29 +703,30 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449' || gstNmpld = '2110
 
 <script type="text/javascript">
    $(document).ready(function(){
-      // $('#buscador1').load('select/buscarnom1.php');
-      // $('#buscador2').load('select/buscarnom2.php');
-      // $('#buscador3').load('select/buscarnom3.php');
-      // $('#buscador4').load('select/buscarnom4.php');
-      // $('#buscador5').load('select/buscarnom5.php');
-      // $('#buscador6').load('select/buscarnom6.php');                          
-      // $('#seleccionar').load('select/tablanom.php'); 
+      $('#buscador1').load('select/buscarnom1.php');
+      $('#buscador2').load('select/buscarnom2.php');
+      $('#buscador3').load('select/buscarnom3.php');
+      $('#buscador4').load('select/buscarnom4.php');
+      $('#buscador5').load('select/buscarnom5.php');
+      $('#buscador6').load('select/buscarnom6.php');                          
+      $('#seleccionar').load('select/tablanom.php'); 
 });
 
 </script>
 
 <script type="text/javascript">
 
-
-function votarpor(){
+function votar(){
 
 var perid = document.getElementById('perid').value;
 var idevl = document.getElementById('idevl').value;
 var idarper = document.getElementById('idarper').value;
 
-dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votarpor';
- // alert(dato); 
+dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votar';
+// alert(dato); 
  if (perid == '' || idevl == '0' || idarper == '0') {
+
+
               $("#vacio").toggle('toggle');
               setTimeout(function() {
               $("#vacio").toggle('toggle');
@@ -789,14 +739,12 @@ dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votarpor';
             type: 'POST',
             data: dato
         }).done(function(respuesta) {
-            // alert(respuesta);
+            //console.log(respuesta);
             if (respuesta == 0) {
             $("#butsel").toggle('toggle');
             $("#exito").toggle('toggle');
             $("#body").toggle('toggle');
-               setTimeout("location.href = 'votar.php'", 1500);
-
-
+               setTimeout("location.href = 'voto.php'", 1500);
          
             } else {
               $("#errores").toggle('toggle');
@@ -812,38 +760,11 @@ dato = 'perid='+perid+'&idevl='+idevl+'&idarper='+idarper+'&opcion=votarpor';
    
    function valor(v){
 
-    $("#nominar").html('LE HACE FALTA VOTAR POR <b>'+' '+v+' '+'</b> CANDIDATOS');
+    $("#nominar").html('LE HACE FALTA NOMINAR A <b>'+' '+v+' '+'</b> CANDIDATOS');
    }
-
-
 
 
 </script>
 
-<?php 
 
-$queri = "SELECT count(*) AS ttl FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id AND idasnt = 2
-          " ;
-$result = mysqli_query($conexion, $queri);
-$resut = mysqli_fetch_array($result);
-
- $re = $resut['ttl']+1;
-  
-    if($re==7)
-    {
-      $re=6;
-    }
-?>
-<script type="text/javascript">
-
-        $("#formulario<?php echo $re?>").show();
-
-</script>  
-<?php
-$res = 7-$resut['ttl'];
-if($resut['ttl']==7){
-}
-?>
 	
