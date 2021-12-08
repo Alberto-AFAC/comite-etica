@@ -442,7 +442,7 @@ if($resu['idareas']==4){
 <label>JEFATURA DE DEPARTAMENTO</label>
 </div>
 <?php
-$query3 = "SELECT * FROM personal WHERE gstNmpld = '7138977' || gstNmpld = '3100121' || gstNmpld = '7131311' ORDER BY gstNombr ASC ";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7139286' || gstNmpld = '3100121' || gstNmpld = '7131311' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 

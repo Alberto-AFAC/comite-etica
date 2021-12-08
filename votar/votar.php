@@ -356,9 +356,7 @@ if($resu['idareas']==3){
 <div class="col-sm-12">    
 <label>SUBDIRECCIÓN DE ÁREA</label>
 <?php
-$query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE idareas = 3 GROUP BY idevl ORDER BY votos DESC LIMIT 3";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7138952' || gstNmpld = '7135156' || gstNmpld = '7131264' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 <select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
@@ -408,7 +406,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
+$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
 
 if($resu['idareas']==4){
 ?>
@@ -439,16 +437,14 @@ if($resu['idareas']==4){
 <div class="col-sm-12">    
 <label>JEFATURA DE DEPARTAMENTO</label>
 <?php
-$query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE idareas = 4 GROUP BY idevl ORDER BY votos DESC LIMIT 3";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7139286' || gstNmpld = '3100121' || gstNmpld = '7131311' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 <select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
 <option value="0">¿VOTAR POR?</option>
 <?php while($data3 = mysqli_fetch_assoc($result3)){  ?>
 
-<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['votos'].' '.$data3['gstNombr'].' '.$data3['gstApell']?></option>
+<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['gstNombr'].' '.$data3['gstApell']?></option>
 <?php } ?>
 </select>
 
@@ -491,7 +487,7 @@ $queri = "SELECT * FROM votacion
 $resul = mysqli_query($conexion, $queri);
 while($resu = mysqli_fetch_array($resul)){
 
-$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
+$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
 
 if($resu['idareas']==5){
 ?>
@@ -522,16 +518,14 @@ if($resu['idareas']==5){
 <div class="col-sm-12">    
 <label>ENLACE</label>
 <?php
-$query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE idareas = 5 GROUP BY idevl ORDER BY votos DESC LIMIT 3";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7133757' || gstNmpld = '3100199' || gstNmpld = '7141056' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 <select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
 <option value="0">¿VOTAR POR?</option>
 <?php while($data3 = mysqli_fetch_assoc($result3)){  ?>
 
-<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['votos'].' '.$data3['gstNombr'].' '.$data3['gstApell']?></option>
+<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['gstNombr'].' '.$data3['gstApell']?></option>
 <?php } ?>
 </select>
 </div>
@@ -577,7 +571,7 @@ $resul = mysqli_query($conexion, $queri);
 $n=0;
 while($resu = mysqli_fetch_array($resul)){
 $n++;
-$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
+$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
 
 if($resu['idareas']==6){
 
@@ -616,16 +610,14 @@ if($n==1){
 <label>OPERATIVO</label>
 <u style="margin-left: 0.5em;color: blue;">¡VOTE POR EL SIGUIENTE OPERATIVO!</u> 
 <?php
-$query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE idareas = 6 GROUP BY idevl ORDER BY votos DESC LIMIT 3";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449' || gstNmpld = '2110367' || gstNmpld = '3100910' || gstNmpld = '3100129' || gstNmpld = '3100953' || gstNmpld = '3100454' || gstNmpld = '7141443' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 <select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
 <option value="0">¿VOTAR POR?</option>
 <?php while($data3 = mysqli_fetch_assoc($result3)){  ?>
 
-<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['votos'].' '.$data3['gstNombr'].' '.$data3['gstApell']?></option>
+<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['gstNombr'].' '.$data3['gstApell']?></option>
 <?php } ?>
 </select>
 </div>
@@ -666,16 +658,14 @@ $query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion
 <u style="margin-left: 0.5em;color: blue;">¡PUEDES VOTAR POR 2 OPERATIVOS!</u>  
 
 <?php
-$query3 = "SELECT *,COUNT(idevl) AS votos FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE idareas = 6 GROUP BY idevl ORDER BY votos DESC LIMIT 3";
+$query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449' || gstNmpld = '2110367' || gstNmpld = '3100910' || gstNmpld = '3100129' || gstNmpld = '3100953' || gstNmpld = '3100454' || gstNmpld = '7141443' ORDER BY gstNombr ASC ";
       $result3 = mysqli_query($conexion,$query3);
 ?>
 <select  id="idevl" class="form-control" name="idevl" type="text" data-live-search="true" style="width: 100%" >
 <option value="0">¿VOTAR POR?</option>
 <?php while($data3 = mysqli_fetch_assoc($result3)){  ?>
 
-<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['votos'].' '.$data3['gstNombr'].' '.$data3['gstApell']?></option>
+<option value="<?php echo $data3['gstIdper']?>"><?php echo $data3['gstNombr'].' '.$data3['gstApell']?></option>
 <?php } ?>
 </select>
 </div>
