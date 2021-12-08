@@ -98,7 +98,7 @@ unset($_SESSION['consul']);
 
 <?php if($_SESSION['usuario']['privilegios']=='ADMINISTRADOR' || $_SESSION['usuario']['privilegios']=='SUPER_ADMIN' || $pass == '7141408'){ ?>
 <ol class="breadcrumb">
-        <li><a style="font-size: 14px" href="votar.php"><i class="fa fa-home"></i> INICIO</a>
+        <li><a style="font-size: 14px" href="voto.php"><i class="fa fa-home"></i> INICIO</a>
         </li>
         <li><a style="font-size: 14px" href="participantes.php"><i class="active" class="fa fa-user"></i> PARTICIPANTES</a>
         </li>

@@ -77,11 +77,28 @@ unset($_SESSION['consul']);
 
          <li class="dropdown user user-menu">
                    
+<?php 
 
+$queri = "SELECT count(*) AS ttl FROM votacion  
+          INNER JOIN personal ON gstIdper = idevl
+          WHERE perid = $id AND idasnt = 2
+          " ;
+$result = mysqli_query($conexion, $queri);
+$resut = mysqli_fetch_array($result);
+
+
+$res = 7-$resut['ttl'];
+if($resut['ttl']==7){
+
+?>
                 <div class="pull-right" style="margin-top:1em ">
                   <a href="../conexion/cerrar_session.php" class="btn btn-primary btn-flat">CERRAR SESIÓN </a>
                </div>
-           
+<?php }else{ ?> 
+                <div class="pull-right" style="margin-top:1em ">
+                  <a href="#" type="button" data-toggle="modal" data-target="#modal-default" onclick="valor(<?php echo $res?>);" class="btn btn-primary btn-flat">CERRAR SESIÓN </a>
+               </div>
+<?php } ?>           
           </li>
 
           <li class="dropdown user user-menu">
