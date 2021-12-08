@@ -106,7 +106,7 @@ unset($_SESSION['consul']);
 <ol class="breadcrumb">
      <li><a style="font-size: 14px" href="voto.php"><i class="active" class="fa fa-home"></i> INICIO</a>
         </li>
-        <li><a style="font-size: 14px" href="participantes.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
+        <li><a style="font-size: 14px" href="participante.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
 <!--         <li></li> -->
       </ol>
 
