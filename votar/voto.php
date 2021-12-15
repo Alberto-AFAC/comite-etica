@@ -98,46 +98,23 @@ unset($_SESSION['consul']);
 
 
     <section class="content-header">
-      <h1>CANDIDATOS COMITÉ DE ÉTICA <br>
+      <h1>ELEGIDOS COMITÉ DE ÉTICA <br>
       </h1>
 
 
 <?php if($_SESSION['usuario']['privilegios']=='ADMINISTRADOR' || $_SESSION['usuario']['privilegios']=='SUPER_ADMIN' || $pass == '7141408'){ ?>
-<ol class="breadcrumb">
-     <li><a style="font-size: 14px" href="voto.php"><i class="active" class="fa fa-home"></i> INICIO</a>
-        </li>
-        <li><a style="font-size: 14px" href="participantes.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
-<!--         <li></li> -->
-      </ol>
+<!-- <ol class="breadcrumb">
+<li><a style="font-size: 14px" href="voto.php"><i class="active" class="fa fa-home"></i> INICIO</a>
+</li>
+<li><a style="font-size: 14px" href="participantes.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
+</ol> -->
 
 <?php } ?>      
       
   </section>
 
-<script type="text/javascript">
-  
-  $("#mostrar").show();
-  $("#ocultar").hide();
 
-</script>
-
-<div id="ocultar">
-<section class="content">
-<div class="row">
-<div class="col-md-12">
-<div class="box box-info">
-
-<div class="box-header with-border">
-
-<h2>21 de diciembre de 2021</h2>
-<h3>Difusión de los nombres del personal elegido para formar parte del Comité de Ética y de Prevención de Conflictos de Interés 2021-2024 </h3>
-</div></div>
-</div>
-</div>
-</section>
-</div>
-
-  <section class="content" id="mostrar" style="display: none;">
+  <section class="content">
   <div class="row">
         <!-- left column -->
 
@@ -151,6 +128,14 @@ unset($_SESSION['consul']);
 <div class="box box-info">
 
 <div class="box-header with-border">
+
+
+<div class="box-header with-border">
+<!-- <h2>21 de diciembre de 2021</h2>
+ --><h3>Difusión de los nombres del personal elegido para formar parte del Comité de Ética y de Prevención de Conflictos de Interés 2021-2024 </h3>
+</div>
+
+
 
 <?php
   
@@ -463,6 +448,8 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449'";
 
       <!-- /.box -->
     </section>
+
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
