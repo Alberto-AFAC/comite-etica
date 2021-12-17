@@ -172,7 +172,7 @@ gstNmpld = '3100847'";
 </div>
 <?php } if($data3['gstNmpld']=='7141384'){ ?>
 <div class="col-sm-3">
-<label>SUBDIRECCIÓN DE ÁREA</label>
+<label>DIRECCIÓN DE ÁREA</label>
 <label class="label2">NOMBRE(S)</label>
 <input type="text"onkeyup="mayus(this);"class="form-control disabled inputalta" value="<?php echo $data3['gstNombr'].' '.$data3['gstApell']?>" disabled="">
 </div>
