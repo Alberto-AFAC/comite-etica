@@ -103,11 +103,11 @@ unset($_SESSION['consul']);
 
 
 <?php if($_SESSION['usuario']['privilegios']=='ADMINISTRADOR' || $_SESSION['usuario']['privilegios']=='SUPER_ADMIN' || $pass == '7141408'){ ?>
-<!-- <ol class="breadcrumb">
+<ol class="breadcrumb">
 <li><a style="font-size: 14px" href="voto.php"><i class="active" class="fa fa-home"></i> INICIO</a>
 </li>
 <li><a style="font-size: 14px" href="participantes.php"><i class="fa fa-user"></i> PARTICIPANTES</a></li>
-</ol> -->
+</ol>
 
 <?php } ?>      
       
@@ -134,44 +134,6 @@ unset($_SESSION['consul']);
 <!-- <h2>21 de diciembre de 2021</h2>
  --><h3>Difusión de los nombres del personal elegido para formar parte del Comité de Ética y de Prevención de Conflictos de Interés 2021-2024 </h3>
 </div>
-
-
-
-<?php
-  
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id 
-          AND idareas = 1
-          AND idasnt = 2
-  " ;
-$resultado = mysqli_query($conexion, $queri);
-
-if($res = mysqli_fetch_array($resultado)){ 
-
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id
-          AND idareas = 1 
-          AND idasnt = 2
-
-          " ;
-$resul = mysqli_query($conexion, $queri);
-while($resu = mysqli_fetch_array($resul)){
-
-$exito = 'VOTO POR '.$resu['gstNombr'].' '.$resu['gstApell'];
-
-if($resu['idareas']==1){
-?>
-<label style="margin-left: 4.5em">DIRECCIÓN EJECUTIVA</label>
-<div class="modal-header padding">
-<b><p class="text-center padding" id="hecho"><?php echo $exito?></p></b>
-</div>
-<?php
-  }
-}
- }else{ ?>
-
 <form id="formulario1" action="" method="POST" onsubmit="return votarpor(this)">
 <br>
 <div class="modal-header padding">
@@ -220,50 +182,11 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '3100248' || gstNmpld = '7141
 </div>
 </form>
      
-<?php } ?>
+
 </div>
-
-
-
-
-
-
 
 
 <div class="box-header with-border">
-<?php
-  
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id 
-          AND idareas = 4
-          AND idasnt = 2
-  " ;
-$resultado = mysqli_query($conexion, $queri);
-
-if($res = mysqli_fetch_array($resultado)){ 
-
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id
-          AND idareas = 4
-          AND idasnt = 2 
-          " ;
-$resul = mysqli_query($conexion, $queri);
-while($resu = mysqli_fetch_array($resul)){
-
-$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
-
-if($resu['idareas']==4){
-?>
-<label style="margin-left: 4.5em">JEFATURA DE DEPARTAMENTO</label>
-<div class="modal-header padding">
-<b><p class="text-center padding" id="hecho"><?php echo $exito?></p></b>
-</div>
-<?php
-  }
-}
- }else{ ?>
 
 <form id="formulario4" action="" method="POST" onsubmit="return votarpor(this)">
 <br>
@@ -290,10 +213,6 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '3100121' || gstNmpld = '3100
 ?>
 
 <?php while($data3 = mysqli_fetch_assoc($result3)){ ?>
-
-
-
-
 
 
 <div class="form-group">
@@ -331,62 +250,13 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '3100121' || gstNmpld = '3100
 
 
 </form>
-<?php } ?>
+
 </div>            <!-- /.box-header -->
 
 
 
 <div class="box-header with-border">
-<?php
 
-  
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id 
-          AND idareas = 6
-          AND idasnt = 2";
-$resultado = mysqli_query($conexion, $queri);
-
-
-if($res = mysqli_fetch_array($resultado)){ 
-
-
-
-$queri = "SELECT * FROM votacion  
-          INNER JOIN personal ON gstIdper = idevl
-          WHERE perid = $id
-          AND idareas = 6
-          AND idasnt = 2";
-$resul = mysqli_query($conexion, $queri);
-$n=0;
-while($resu = mysqli_fetch_array($resul)){
-$n++;
-$exito = $resu['gstNombr'].' '.$resu['gstApell'].' '.'NOMINADO ';
-
-if($resu['idareas']==6){
-
-if($n==1){ ?>
-<label style="margin-left: 4.5em">OPERATIVO </label>
-<?php }
-?>
-
-<div class="modal-header padding">
-<b><p class="text-center padding" id="hecho"><?php echo $exito?></p></b>
-</div>
-<?php
-  }
-
-} 
-
-if($n==1){
-?>
-
-
-
-
-<?php 
-  }
-}else{ ?>
 <form id="formulario6" action="" method="POST" onsubmit="return votarpor(this)">
 <br>
 <div class="modal-header padding">
@@ -432,7 +302,7 @@ $query3 = "SELECT * FROM personal WHERE gstNmpld = '7141449'";
 
 </form>
 
-<?php } ?>
+
 </div>   
 
 
